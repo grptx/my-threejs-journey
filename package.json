@@ -1,11 +1,24 @@
 {
   "name": "my-threejs-journey",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "2.0.0",
+  "main": "dist/index.js",
   "repository": "git@github.com:grptx/my-threejs-journey.git",
   "author": "Roberto Rossetti <roberto.rossetti@unicaspa.it>",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack"
+  },
   "dependencies": {
     "three": "^0.150.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.3",
+    "@types/three": "^0.149.0",
+    "html-webpack-plugin": "^5.5.0",
+    "path": "^0.12.7",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.2",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1"
   }
 }
