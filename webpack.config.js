@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 
 module.exports = {
     entry: './src/index.ts',
@@ -11,6 +13,14 @@ module.exports = {
                 use: 'ts-loader',
                 exclude: /node_modules/,
             },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                     MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader'
+                ]
+            }
         ]
     },
     resolve: {
@@ -26,6 +36,10 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: "My ThreeJs journey - day 1",
+        }),
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+            chunkFilename: "[id].css",
         }),
     ]
 }
